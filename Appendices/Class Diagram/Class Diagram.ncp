@@ -1,0 +1,480 @@
+<Project>
+  <Name>Crazy Maze</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>GameController</Name>
+        <Access>Public</Access>
+        <Location left="633" top="83" />
+        <Size width="197" height="383" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public AudioClip audWin</Member>
+        <Member type="Field">private AudioSource audioSource</Member>
+        <Member type="Field">private Timer timer</Member>
+        <Member type="Field">public Text objective</Member>
+        <Member type="Field">public GameObject WallFinish</Member>
+        <Member type="Field">public GameObject playerObject</Member>
+        <Member type="Field">public GameObject controllerX</Member>
+        <Member type="Field">public Button CardButton1</Member>
+        <Member type="Field">public Button EndButton1</Member>
+        <Member type="Field">public GameObject des</Member>
+        <Member type="Method">public void Start()</Member>
+        <Member type="Method">public void Update()</Member>
+        <Member type="Method">public void CardSelected()</Member>
+        <Member type="Method">public void EndSelected()</Member>
+        <Member type="Method">public void FinishRegion()</Member>
+        <Member type="Method">public void StartRegion()</Member>
+        <Member type="Method">public void TimeOver()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Controller</Name>
+        <Access>Public</Access>
+        <Location left="1139" top="312" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Transform target</Member>
+        <Member type="Field">public float speed = 5</Member>
+        <Member type="Field">bool _rightButtonDown</Member>
+        <Member type="Field">bool _LeftButtonDown</Member>
+        <Member type="Field">bool _upButtonDown</Member>
+        <Member type="Field">bool _downButtonDown</Member>
+        <Member type="Method">public void Update()</Member>
+        <Member type="Method">public void OnRightButtonDown()</Member>
+        <Member type="Method">public void OnLeftButtonDown()</Member>
+        <Member type="Method">public void OnUpButtonDown()</Member>
+        <Member type="Method">public void OnDownButtonDown()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MazeSpawner</Name>
+        <Access>Public</Access>
+        <Location left="956" top="405" />
+        <Size width="162" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public bool FullRandom = false</Member>
+        <Member type="Field">public bool RandomSeed = 12345</Member>
+        <Member type="Field">public GameObject Floor</Member>
+        <Member type="Field">public GameObject Wall</Member>
+        <Member type="Field">public GameObject Pillar</Member>
+        <Member type="Field">public int Rows</Member>
+        <Member type="Field">public int Columns</Member>
+        <Member type="Field">public float CellWidth</Member>
+        <Member type="Field">public float CellHeight</Member>
+        <Member type="Field">public bool AddGaps</Member>
+        <Member type="Field">private GameObject GoalPrefab</Member>
+        <Member type="Method">public void Start()</Member>
+        <Member type="Method">public void MazeSpawner()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>JumpButton</Name>
+        <Access>Public</Access>
+        <Location left="769" top="638" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private bool shouldJump</Member>
+        <Member type="Field">Vector3 startPos</Member>
+        <Member type="Method">public void Update()</Member>
+        <Member type="Method">public void ButtonPressedDown()</Member>
+        <Member type="Method">public void ButtonPressedUp()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Timer</Name>
+        <Access>Public</Access>
+        <Location left="550" top="537" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int timeLeft</Member>
+        <Member type="Field">public Text countdownText</Member>
+        <Member type="Field">public GameController gameController</Member>
+        <Member type="Method">public void Start()</Member>
+        <Member type="Method">public void Update()</Member>
+        <Member type="Method">public IEnumerator LoseTime()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ExitButton</Name>
+        <Access>Public</Access>
+        <Location left="1127" top="66" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool _exitButtonDown</Member>
+        <Member type="Method">public void Update()</Member>
+        <Member type="Method">public void OnExitButtonDown()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CardScript</Name>
+        <Access>Public</Access>
+        <Location left="200" top="537" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public bool _cardButtonDown</Member>
+        <Member type="Field">private GameController gameController</Member>
+        <Member type="Method">public void Start()</Member>
+        <Member type="Method">public void Update()</Member>
+        <Member type="Method">public void OnCardButtonDown()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EndScript</Name>
+        <Access>Public</Access>
+        <Location left="375" top="537" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool _endButtonDown</Member>
+        <Member type="Field">private GameController gameController</Member>
+        <Member type="Method">public void Start()</Member>
+        <Member type="Method">public void Update()</Member>
+        <Member type="Method">public void OnEndButtonDown()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CameraController</Name>
+        <Access>Public</Access>
+        <Location left="1139" top="595" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public GameObject player</Member>
+        <Member type="Field">private Vector3 offset</Member>
+        <Member type="Method">public void Start()</Member>
+        <Member type="Method">public void LateUpdate()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FinishRegion</Name>
+        <Access>Public</Access>
+        <Location left="300" top="20" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private GameController gameController</Member>
+        <Member type="Method">public void Start()</Member>
+        <Member type="Method">public void OnTriggerEnter()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MiddleRegion</Name>
+        <Access>Public</Access>
+        <Location left="125" top="148" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Text tutorial</Member>
+        <Member type="Method">public void Start()</Member>
+        <Member type="Method">public void OnTriggerEnter()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StartRegion</Name>
+        <Access>Public</Access>
+        <Location left="300" top="269" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public GameController gameController</Member>
+        <Member type="Method">public void Start()</Member>
+        <Member type="Method">public void OnTriggerEnter()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BackButton</Name>
+        <Access>Public</Access>
+        <Location left="1892" top="146" />
+        <Size width="162" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool _backButtonDown</Member>
+        <Member type="Field">public GameObject play</Member>
+        <Member type="Field">public GameObject custom</Member>
+        <Member type="Field">public GameObject tutorial</Member>
+        <Member type="Field">public GameObject help</Member>
+        <Member type="Field">public GameObject back</Member>
+        <Member type="Field">public GameObject text</Member>
+        <Member type="Field">public GameObject desert</Member>
+        <Member type="Field">public GameObject winter</Member>
+        <Member type="Field">public GameObject garden</Member>
+        <Member type="Method">public void Cur()</Member>
+        <Member type="Method">public void OnBackButtonDown()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CustomButton</Name>
+        <Access>Public</Access>
+        <Location left="1387" top="16" />
+        <Size width="162" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool _customButtonDown</Member>
+        <Member type="Method">public void Update()</Member>
+        <Member type="Method">public void OnCustomButtonDown()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DesertButton</Name>
+        <Access>Public</Access>
+        <Location left="1702" top="467" />
+        <Size width="162" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool _desertButtonDown</Member>
+        <Member type="Method">public void Update()</Member>
+        <Member type="Method">public void OnDesertButtonDown()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>WinterButton</Name>
+        <Access>Public</Access>
+        <Location left="1702" top="328" />
+        <Size width="162" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool _WinterButtonDown</Member>
+        <Member type="Method">public void Update()</Member>
+        <Member type="Method">public void OnWinterButtonDown()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GardenButton</Name>
+        <Access>Public</Access>
+        <Location left="1583" top="621" />
+        <Size width="162" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool _gardenButtonDown</Member>
+        <Member type="Method">public void Update()</Member>
+        <Member type="Method">public void OnGardenButtonDown()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HelpButton</Name>
+        <Access>Public</Access>
+        <Location left="1595" top="66" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool _helpButtonDown</Member>
+        <Member type="Field">public GameObject play</Member>
+        <Member type="Field">public GameObject custom</Member>
+        <Member type="Field">public GameObject tutorial</Member>
+        <Member type="Field">public GameObject help</Member>
+        <Member type="Field">public GameObject back</Member>
+        <Member type="Field">public GameObject text</Member>
+        <Member type="Method">public void Help()</Member>
+        <Member type="Method">public void OnHelpButtonDown()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PlayButton</Name>
+        <Access>Public</Access>
+        <Location left="1399" top="184" />
+        <Size width="162" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool _playButtonDown</Member>
+        <Member type="Field">public GameObject play</Member>
+        <Member type="Field">public GameObject custom</Member>
+        <Member type="Field">public GameObject tutorial</Member>
+        <Member type="Field">public GameObject help</Member>
+        <Member type="Field">public GameObject back</Member>
+        <Member type="Field">public GameObject text</Member>
+        <Member type="Field">public GameObject desert</Member>
+        <Member type="Field">public GameObject winter</Member>
+        <Member type="Field">public GameObject garden</Member>
+        <Member type="Method">public void Play()</Member>
+        <Member type="Method">public void OnPlayButtonDown()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TutorialButton</Name>
+        <Access>Public</Access>
+        <Location left="1399" top="555" />
+        <Size width="162" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool _tutorialButtonDown</Member>
+        <Member type="Method">public void Update()</Member>
+        <Member type="Method">public void OnTutorialButtonDown()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MarkButton</Name>
+        <Access>Public</Access>
+        <Location left="550" top="786" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool _markButtonDown</Member>
+        <Member type="Field">Vector3 startPos</Member>
+        <Member type="Field">public GameObject hazard</Member>
+        <Member type="Field">public float banana</Member>
+        <Member type="Field">public Text bananasText</Member>
+        <Member type="Method">public void OnMarkButtonDown()</Member>
+        <Member type="Method">public void Update()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="10" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="9" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="11" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="6" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="7" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="4" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="8" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="3" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="20" second="4">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="5" second="13">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="5" second="19">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="5" second="17">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="5" second="18">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="12" second="17">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="12" second="18">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="18" second="16">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="18" second="15">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="18" second="14">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
